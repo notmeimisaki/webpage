@@ -1,0 +1,150 @@
+ /* main webpage title and um background AND text!*/
+ @font-face {
+    font-family: "Ubuntu Sans";
+    src: url(Ubuntu_Sans/static/UbuntuSans-Regular.ttf);
+    font-weight: normal;
+ }
+ @font-face {
+    font-family: "Ubuntu Sans";
+    src: url(Ubuntu_Sans/static/UbuntuSans-Bold.ttf);
+    font-weight: bold;
+ }
+ h1{
+    color: whitesmoke;
+    font-family: "Ubuntu Sans", Arial, sans-serif;
+    font-size: 200%;
+}
+h1 img{
+    vertical-align: -16px;
+}
+h2{
+    color: whitesmoke;
+    font-family: "Ubuntu Sans", Arial, sans-serif;
+    font-size: 100%;
+    margin: -33px 0 0 61px;
+
+}
+h3{
+    text-align: center;
+}
+.subheader{
+    position: relative;
+    display: block;
+    width: 140px;
+    margin: 0 auto;
+    font-family: "Ubuntu Sans", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: white;
+    padding: 8px 20px;
+}
+.blurb-body{
+    font-family: "Ubuntu Sans",Arial, sans-serif;
+    font-size: small;
+    background-color: rgba(173, 216, 235, 0.4);
+    border: 2px solid rgba(173, 216, 235, 0.6);
+    border-radius: 14px;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.banner-img{
+    display: block;
+    width: 100%;
+    height: 150px;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    border-radius: 14px;
+    object-fit: cover;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.inline-icon{
+    width: 40px;
+    height: auto;
+    vertical-align: -12px;
+}
+p{
+    font-family: "Ubuntu Sans", Arial, sans-serif;
+    font-size: small;
+}
+body{
+    background-image: url(/images/background2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* wraps everything up inside flexbox */
+.wrapper{
+    display: flex;
+    gap: 3px;
+    width: 60%;
+    margin: 0  auto;
+}
+
+/* all my containers and stuff... i feel like they're messy and broken :3*/
+.container{
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.container-header {
+    background-image: url(icons/subheader2.png);
+    background-position: center;
+    background-size: 120%;
+    border-radius: 14px 14px 0 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.container-body{
+    display: flex;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.container-body .sidebar-left{
+    border-radius: 0 0 0 14px;
+}
+.main-body{
+    flex: 3;
+}
+/* sidebar styles */
+.sidebar { 
+    flex: 1;
+    margin-top: 102px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.sidebar img{
+    display: block;
+    margin: -10px 0;
+}
+/* this is ALL unorganized right now... it is small fixes and style adjustments to img and text inside sidebars */
+.album-art{
+    display: block;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 14px;
+}
+.sidebar-right .inline-icon{
+    width: 30px;
+    height: auto;
+}
+.sidebar-right p {
+    margin: 4px 0 0 0;
+    padding-top: 30px;
+
+}
+.sidebar-right p img {
+    vertical-align: middle;
+}
