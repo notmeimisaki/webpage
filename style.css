@@ -22,7 +22,10 @@ h2{
     font-family: "Ubuntu Sans", Arial, sans-serif;
     font-size: 100%;
     margin: -33px 0 0 61px;
-
+}
+.aboutme-header{
+    margin: 0 auto;
+    padding: 4px;
 }
 .subheader{
     position: relative;
@@ -54,6 +57,8 @@ h2{
     padding: 10px;
     margin-bottom: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    max-height: 200px;
+    overflow-y: auto;
 }
 .blog-header{
     font-weight: bold;
@@ -70,6 +75,10 @@ h2{
     padding-left: 10px;
     padding-right: 10px;
     margin: 5px 1px;
+}
+.blog-title{
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
 }
 .banner-img{
     display: block;
@@ -96,6 +105,12 @@ body{
     background-attachment: fixed;
     background-position: center;
 }
+.aboutme-body{
+    background-image: url(images/background1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
 
 /* wraps everything up inside flexbox */
 .wrapper{
@@ -108,7 +123,6 @@ body{
 /* all my containers and stuff... i feel like they're messy and broken :3*/
 .container{
     width: 80%;
-    height: 80%;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.7);
     border: 2px solid rgba(255, 255, 255, 0.6);
@@ -119,10 +133,10 @@ body{
 .container-header {
     background-image: url(icons/subheader2.png);
     background-position: center;
-    background-size: 120%;
+    background-size: 130%;
     border-radius: 14px 14px 0 0;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 12px;
     padding-left: 20px;
     padding-right: 20px;
 }
