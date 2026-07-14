@@ -33,7 +33,7 @@
 
                     <div class="main-body">
                         
-                        <div class="blurb-body">
+                        <div style="margin-top: 10px;" class="blurb-body">
                             <img src="images/mainbox-header.png" class="banner-img">
                             <p><img src="icons/catguy.gif" class="inline-icon">
                             welcome to my webpage! and my portfolio :3 you can find any of my projects here (new or WIP), updates on my mini-blog, or just things i like 
@@ -43,6 +43,9 @@
                             <div class="blog-header">
                             <span class="blog-title">recent updates</span>
                             <a href="#" class="blog-all">full</a>
+                            </div>
+                            <div class="blog-entry">
+                                <p class="blog-text"><span style="font-style: italic;">july 14, 2026</span> - now playing widget is live using last.fm! still super confused when it comes to JS :P about me page actually has content now... will add more music related things under "now playing"</p>
                             </div>
                             <div class="blog-entry">
                                 <p class="blog-text"><span style="font-style: italic;">july 9, 2026</span> - adding a working about me page featuring sakakibara and mei :D changed font styles, added scrolling to the mini-blog. need to fill in the about me page.</p>
@@ -64,14 +67,44 @@
             <div class="sidebar sidebar-right">
                 
                 <img src="icons/nowplaying-header.png" width="140">
-                <img src="images/dp-album.png" class="album-art" width="140">
+                <img src="images/dp-album.png" class="album-art" id="album-art" width="140">
+
+                <div>
+
+                    <p id="track-name" style="margin: 0; padding-top: 15px; font-weight: bold;"></p>
+                    <p id="artist-name" style="margin: 0; padding-top: 1px;"></p>
+
+                </div>
 
             </div>
     </div>
+
+<script>
+    const API_KEY = "026fbea870f63ad60c61fe0abc7dc23f"
+    const USER = "ninexiota"
+
+    fetch('https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=ninexiota&api_key=026fbea870f63ad60c61fe0abc7dc23f&format=json&limit=1')
+        .then(response => response.json())
+        .then(data=> {
+            const track = data.recenttracks.track[0];
+            const imageUrl = track.image[2]["#text"];
+            const trackName = track.name;
+            const artistName = track.artist["#text"];
+            const isNowPlaying = track["@attr"] && track["@attr"].nowplaying === "true";
+
+            document.getElementById("album-art").src = imageUrl;
+            document.getElementById("track-name").textContent = trackName;
+            document.getElementById("artist-name").textContent = isNowPlaying 
+                ? "▶ " + artistName 
+                : artistName;
+        })
+        .catch(err => console.log("last.fm fetch failed:", err));
+
+</script>
 
 </body>
 
 
 
-
+<!--adding this bc git won't push my COMMITS-->
 </html>
