@@ -41,22 +41,22 @@ h2{
 .blurb-body{
     font-family: "Ubuntu Sans",Arial, sans-serif;
     font-size: small;
-    background-color: rgba(173, 216, 235, 0.4);
-    border: 2px solid rgba(173, 216, 235, 0.6);
+    background-color: rgba(173, 216, 235, 0.25);
+    border: 1px solid rgba(173, 216, 235, 0.9);
     border-radius: 14px;
     padding: 10px;
     margin-bottom: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
 }
 .mini-blog{
     font-family: "Ubuntu Sans",Arial, sans-serif;
     font-size: small;
-    background-color: rgba(173, 216, 235, 0.4);
-    border: 2px solid rgba(173, 216, 235, 0.6);
+    background-color: rgba(173, 216, 235, 0.22);
+    border: 1px solid rgba(173, 216, 235, 0.9);
     border-radius: 14px;
     padding: 10px;
     margin-bottom: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
     max-height: 200px;
     overflow-y: auto;
 }
@@ -124,11 +124,12 @@ body{
 .container{
     width: 80%;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    outline: 1px solid rbga(0, 0, 0, 0.15);
     border-radius: 16px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(16px);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
 }
 .container-header {
     background-image: url(icons/subheader2.png);
@@ -156,12 +157,13 @@ body{
 .sidebar { 
     flex: 1;
     margin-top: 102px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.55);
     padding: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    outline: 1px solid rbga(0, 0, 0, 0.15);
     border-radius: 16px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(16px);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2)
 }
 .sidebar-header{
     display: block;

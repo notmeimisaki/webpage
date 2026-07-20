@@ -10,9 +10,9 @@
 
     <div class="wrapper">
 
-        <div class="sidebar sidebar-left"><img src="icons/aboutme-header.png" class="sidebar-header" width="140">
+        <div class="sidebar sidebar-left"><img src="icons/me-header.png" class="sidebar-header" width="140">
             <div class="blurb-body"> my name's nick and i'm a 20 year old student working toward a BSc in Mathematics. <br>"the worse i am at something, the better i feel when i work at it and learn how to do it."</div>
-            <img src="icons/mylinks-header.png" class="sidebar-header" width="140" height="auto">
+            <img src="icons/links-header.png" class="sidebar-header" width="140" height="auto">
             <div class="blurb-body">
                 <a href="about.html" class="links"><img src="icons/Folder213.ico" width="20" style="margin: 0 5px -5px;">more me!</a><br><br>
                 <a href="#" class="links"><img src="icons/CP051.ico" width="20" style="margin: 0 5px -5px;">projects</a><br><br>
@@ -46,6 +46,9 @@
                             <a href="#" class="blog-all">full</a>
                             </div>
                             <div class="blog-entry">
+                                <p class="blog-text"><span style="font-style: italic;">july 20, 2026</span> - minor style changes (vista inspired), unfinished top songs section added, okabe and john added.</p>
+                            </div>
+                            <div class="blog-entry">
                                 <p class="blog-text"><span style="font-style: italic;">july 14, 2026</span> - now playing widget is live using last.fm! still super confused when it comes to JS :P about me page actually has content now... will add more music related things under "now playing"</p>
                             </div>
                             <div class="blog-entry">
@@ -77,6 +80,9 @@
 
                 </div>
 
+                <img src="icons/topsongs-header.png" class="sidebar-header" width="140">
+                <div id="top-tracks" style="max-height: 200px; overflow-y: auto; font-style: italic;"></div>
+
             </div>
     </div>
 
@@ -100,6 +106,21 @@
                 : artistName;
         })
         .catch(err => console.log("last.fm fetch failed:", err));
+
+    fetch('https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=ninexiota&api_key=026fbea870f63ad60c61fe0abc7dc23f&format=json&period=7day&limit=5')
+        .then(response => response.json())
+        .then(data => {
+            const tracks = data.toptracks.track;
+            const container = document.getElementById("top-tracks");
+
+        tracks.forEach((track, index) => {
+            const entry = document.createElement("p");
+            entry.style.margin = "4px 0";
+            entry.textContent = `${index + 1}. ${track.name} - ${track.artist.name}`;
+            container.appendChild(entry);
+            });
+         })
+    .catch(err => console.log("top tracks fetch failed:", err));
 
 </script>
 
