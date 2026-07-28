@@ -47,6 +47,15 @@ h2{
     padding: 10px;
     margin-bottom: 12px;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+}
+.blurb-body:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rbga(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(173, 216, 235, 0.8),
+                inset 0 1px 1px rgba(255, 255, 255, 0.9);
+
 }
 .mini-blog{
     font-family: "Ubuntu Sans",Arial, sans-serif;
@@ -60,6 +69,14 @@ h2{
     max-height: 200px;
     overflow-y: auto;
 }
+
+.mini-blog:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rbga(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(173, 216, 235, 0.8),
+                inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
 .blog-header{
     font-weight: bold;
 }
@@ -76,6 +93,14 @@ h2{
     padding-right: 10px;
     margin: 5px 1px;
 }
+
+.blog-entry:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rbga(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(173, 216, 235, 0.8),
+                inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
 .blog-title{
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
@@ -130,6 +155,8 @@ body{
     border-radius: 16px;
     backdrop-filter: blur(16px);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
+    animation: fadein 1.4s ease;
+    z-index: 1;
 }
 .container-header {
     background-image: url(icons/subheader2.png);
@@ -163,17 +190,51 @@ body{
     outline: 1px solid rbga(0, 0, 0, 0.15);
     border-radius: 16px;
     backdrop-filter: blur(16px);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2)
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
+    animation: fadein 1s ease;
+}
+.sidebar-left{
+    animation: slide-left 2s ease 0.4s both;
+}
+
+.sidebar-right{
+    animation: slide-right 2s ease 0.4s both;
+    z-index: 0;
 }
 .sidebar-header{
     display: block;
     margin: -10px 0;
 }
 /* this is ALL unorganized right now... it is small fixes and style adjustments to img and text inside sidebars */
+@keyframes float{
+    0% {transform: translateY(0px); scale: (1);}
+    50% {transform: translateY(-6px); scale: (1.08);}
+    100% {transform: translateY(0px); scale: (1);}
+}
+
+@keyframes float-pulse{
+    0%   { transform: translateY(0px) scale(1); }
+    50%  { transform: translateY(-6px) scale(1.03); }
+    100% { transform: translateY(0px) scale(1); }
+}
+
+@keyframes pulse{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% {transform: scale(1); }
+}
+
+@keyframes glow{
+     0% { text-shadow: 0 0 4px rgba(173, 216, 235, 0.4); }
+    50% { text-shadow: 0 0 10px rgba(173, 216, 235, 0.9); }
+    100% { text-shadow: 0 0 4px rgba(173, 216, 235, 0.4); }
+}
+
 .album-art{
     display: block;
     border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 14px;
+    animation: float-pulse 3s ease-in-out infinite;
 }
 .sidebar-right .inline-icon{
     width: 30px;
@@ -196,4 +257,28 @@ body{
 }
 .links{
     margin: 10px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+.links:hover{
+    color: whitesmoke;
+}
+
+.bkgnd-audio{
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slide-left {
+    from { transform: translateX(80px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-right {
+    from { transform: translateX(-80px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
 }
