@@ -1,159 +1,129 @@
 <!DOCTYPE html>
-            <!--i have no idea what i am doing-->
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
-<title>nick's webpage</title>
-</head>
-
-<!-- background musique -->
-<audio id="bg-music" loop>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nick's webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <audio id="music" loop>
     <source src="audio/LEASE by Takeshi Abo but slightly bitcrushed for nostalgia 4.mp3" type="audio/mpeg">
-</audio>
-
+    </audio>
+</head>
 <body>
+    <div class="wall" id="wall">
 
+        <div class="welcome" id="welcome">welcome.</div>
 
+    </div>
+
+    <!--testing for now-->
+    <div class="vignette"></div>
+
+    <!--all the main content, aligned in rows-->
     <div class="wrapper">
 
-        <div class="sidebar sidebar-left"><img src="icons/me-header.png" class="sidebar-header" width="140">
-            <div class="blurb-body"> my name's nick and i'm a 20 year old student working toward a BSc in Mathematics. <br>"the worse i am at something, the better i feel when i work at it and learn how to do it."</div>
-            <img src="icons/links-header.png" class="sidebar-header" width="140" height="auto">
-            <div class="blurb-body">
-                <a href="about.html" class="links"><img src="icons/Folder213.ico" width="20" style="margin: 0 5px -5px;">more me!</a><br><br>
-                <a href="#" class="links"><img src="icons/CP051.ico" width="20" style="margin: 0 5px -5px;">projects</a><br><br>
-                <a href="#" class="links"><img src="icons/File123.ico" width="20" style="margin: 0 5px -5px;">reading list</a><br><br>
-                <a href="blog.html" class="links"><img src="icons/Write008.ico" width="20" style="margin: 0 5px -5px;">blog</a>
+        <div class="marginTop"></div>
+
+                    <!--header/titlecard-->
+        <div class="container titlecard" id="titlecard" style="border-radius: 16px 16px 0 0;">
+            <img src="icons/logo.png" style="width: 60px; height: 60px; margin: 10px 0 0;">
+            <div class="title">
+                <h1 style="font-family: Neuropol;">nick's page</h1>
+                <h3 style="font-family: Neuropol;">my personal webpage!</h3>
             </div>
-            <div><img src="images/okabejohn.png" width="250" style="padding: 0px; margin: 0 -45px; position: absolute;"></div>
         </div>
 
-            <div class="container">
+        <!--wrapper for center container, aligned in columns-->
+        <div class="subwrap" id="subwrap">
 
-                <div class="container-header">
-                
-                    <h1 style="text-align: left;"><img src="icons/logo.png" width="60px" height="auto" style="margin: 0 0 -10px;">nick's page</h1>
-                    <h2 style="text-align: left;">my personal webpage!</h2>
-                
-                </div>
 
-                <div class="container-body">
-
-                    <div class="main-body">
-                        
-                        <div style="margin-top: 10px;" class="blurb-body">
-                            <img src="images/mainbox-header.png" class="banner-img">
-                            <p><img src="icons/catguy.gif" class="inline-icon">
-                            welcome to my webpage! and my portfolio :3 you can find any of my projects here (new or WIP), updates on my mini-blog, or just things i like and</p>
-                            <p style="margin-top: -5px;">think are super cool!!</p>
-                        </div>
-                        <div class="mini-blog">
-                            <div class="blog-header">
-                            <span class="blog-title">&nbsp;changelog</span>
-                            <a href="#" class="blog-all" style="text-decoration: none;">&nbsp;more</a>
-                            </div>
-                            <div class="blog-entry">
-                                <p class="blog-text"><span style="font-style: italic;">july 27, 2026</span> - blog page added with functioning search bar! blogs are currently just filler. added subtle animations to boxes and album art. added slide animation to sidebars and a fade in. added background music!</p>
-                            </div>
-                            <div class="blog-entry">
-                                <p class="blog-text"><span style="font-style: italic;">july 20, 2026</span> - minor style changes (vista inspired), unfinished top songs section added, okabe and john added.</p>
-                            </div>
-                            <div class="blog-entry">
-                                <p class="blog-text"><span style="font-style: italic;">july 14, 2026</span> - now playing widget is live using last.fm! still super confused when it comes to JS :P about me page actually has content now... will add more music related things under "now playing"</p>
-                            </div>
-                            <div class="blog-entry">
-                                <p class="blog-text"><span style="font-style: italic;">july 9, 2026</span> - adding a working about me page featuring sakakibara and mei :D changed font styles, added scrolling to the mini-blog. need to fill in the about me page.</p>
-                            </div>
-                            <div class="blog-entry">
-                                <p class="blog-text"><span style="font-style: italic;">july 8, 2026</span> - understanding how to use href, still need to build about.html, projects.html, and learning.html :P<br>links are currently dead but will fix ASAP</p>
-                            </div>
-                            <div class="blog-entry">
-                                <p class="blog-text"><span style="font-style: italic;">july 8, 2026</span> - launched my webpage about 2 days ago, had no idea how to use github pages... or how to redirect to my domain and set up cloudfare DNS but i managed it!</p>
-                            </div>
-                        </div>
-                        <p style="position: absolute; margin: 25px 5px 0; font-size: 10px;">*webpage not optimized for mobile yet</p>
+                        <!--left container-->
+            <aside class="sidewrap left" id="sidewrap-left">
+                <div class="container side" style="border-radius: 0 0 0 16px; align-items: center;">
+                    <img src="heads/head-intro.png" style="width: 90%; margin-top: 10px;">
+                    <div class="blurb" style="margin-bottom: 10px;">
+                        <p style="font-family: Ubuntu Mono; font-weight: bold; line-height: 0.5;">hi! my name's nick!</p>
+                        <p style="font-family: Ubuntu Mono;">i'm a 20 year old student working on a BSc in Math.</p>
                     </div>
-                
+                    <img src="heads/head-navigate.png" style="width: 90%;">
+                    <div class="blurb">
+                        <a href="about.html" class="links"><img src="icons/Folder213.ico" style="width: 20%;">&nbsp;more me!</a>
+                        <a href="#" class="links"><img src="icons/CP051.ico" style="width: 20%;">&nbsp;projects</a>
+                        <a href="#" class="links"><img src="icons/File123.ico" style="width: 20%;">&nbsp;reading list</a>
+                        <a href="blog.html" class="links"><img src="icons/Write008.ico" style="width: 20%;">&nbsp;blog</a>
+                    </div>
                 </div>
-            
+                <img src="imgs/6kotun5j0d3dpjbophf90t1nnp-8b27a2616795c40b4093cc68a067abcc.png" class="sidebar-character-1">
+            </aside>
+
+
+            <!--middle container-->
+            <div class="container" style="border-radius: 0;">
+
+                <img src="imgs/evangelion.webp" class="banner">
+                <div class="blurb" style="padding-left: 15px;">
+                    <strong style="font-family: Ubuntu Mono; display: inline-flex; align-items: center; color: whitesmoke; text-shadow: 1px 1px 3px rgba(0, 0, 0, 1); margin-right: 40px;"><img src="icons/catguy.gif" style="width: 40px;">welcome to my webpage! and my portfolio :3</strong>
+                    <p style="font-family: Ubuntu Mono; margin-top: 0;">this is where i hope to share my projects, shows i binge, music i love, and anything i find super cool!</p>
+                </div>
+                <div class="blurb changelog">
+                    <div class="title row">
+                        <span style="font-weight: bold; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); display: grid; text-align: left; margin: 0 5px 0 3px; padding: 5px;">
+                        changelog
+                        </span>
+                        <a href="blog.html" style="text-decoration: none; font-weight: bold; margin-top: 5px;">more</a>
+                    </div>
+                    <div class="blurb entry">
+                        <p><span style="font-style: italic;">august 25, 2026</span> - links are dead for now while i rebuild about.html, scrap blog.html, and start projects.html</p>
+                    </div>
+                    <div class="blurb entry">
+                        <p><span style="font-style: italic;">august 23, 2026</span> - rewrote all the code for the homepage. added welcome screen (learning JS finally). lots of style changes. next up: rewrite about.html, scrap blog.html for now, get projects.html up.</p>
+                    </div>
+                    <div class="blurb entry">
+                        <p><span style="font-style: italic;">july 27, 2026</span> - blog page added with functioning search bar! blogs are currently just filler. added subtle animations to boxes and album art. added slide animation to sidebars and a fade in. added background music!</p>
+                    </div>
+                    <div class="blurb entry">
+                        <p><span style="font-style: italic;">july 20, 2026</span> - minor style changes (vista inspired), unfinished top songs section added, okabe and john added.</p>
+                    </div>
+                    <div class="blurb entry">
+                        <p><span style="font-style: italic;">july 14, 2026</span> - now playing widget is live using last.fm! still super confused when it comes to JS :P about me page actually has content now... will add more music related things under "now playing"</p>
+                    </div>
+                    <div class="blurb entry">
+                        <p><span style="font-style: italic;">july 9, 2026</span> - adding a working about me page featuring sakakibara and mei :D changed font styles, added scrolling to the mini-blog. need to fill in the about me page.</p>
+                    </div>
+                    <div class="blurb entry">
+                        <p><span style="font-style: italic;">july 8, 2026</span> - understanding how to use href, still need to build about.html, projects.html, and learning.html :P<br>links are currently dead but will fix ASAP</p>
+                    </div>
+                    <div class="blurb entry">
+                         <p><span style="font-style: italic;">july 8, 2026</span> - launched my webpage about 2 days ago, had no idea how to use github pages... or how to redirect to my domain and set up cloudfare DNS but i managed it!</p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="sidebar sidebar-right">
-                
-                <img src="icons/nowplaying-header.png" class="sidebar-header" width="140">
-                <img src="images/dp-album.png" class="album-art" id="album-art" width="140">
 
-                <div class="blurb-body" style="padding-top: 0px; margin: 5px;" >
-
-                    <p id="track-name" style="margin: 0; padding-top: 15px; font-weight: bold;"></p>
-                    <p id="artist-name" style="margin: 0; padding-top: 1px;"></p>
-
+                    <!--right container-->
+            <aside class="sidewrap right" id="sidewrap-right">
+                <div class="container side" style="align-items: center; border-radius: 0 0 16px 0;">
+                    <img src="heads/head-nowplaying.png" style="width: 90%; margin-top: 5px;">
+                    <img alt="album cover" class="album-art" id="album-art" style="width: 100%;">
+                    <div class="blurb" style="background-color: rgba(0, 0, 0, 0); border: none; padding: 0;">
+                        <p id="track-name" style="font-size: medium; font-weight: bolder; color: black; line-height: 1; margin-bottom: 0;"></p>
+                        <p id="artist-name" style="color: black; font-weight: 500; line-height: 1;"></p>
+                    </div>
+                    <img src="heads/head-topsongs.png" style="width: 90%; margin: 0;">
+                    <div class="blurb" id="top-tracks" style="font-family: 'Ubuntu Mono'; overflow-y: auto; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); color: black;"></div>
                 </div>
+                <img src="icons/musicplayer.png" class="sidebar-character-2" id="musicButton" style="cursor: pointer;" onclick="">
+            </aside>
 
-                <img src="icons/topsongs-header.png" class="sidebar-header" style="position: relative; z-index: 1;" width="140">
-                <div id="top-tracks" style="max-height: 200px; overflow-y: auto; z-index: 0; margin-top: -30px;"></div>
 
-                <p id="music-btn" class="bkgnd-audio" style="cursor: pointer; font-size: 10px;">press me for background music!</p>
+        </div>
 
-            </div>
+
     </div>
-<!-- i copied this script... the last.fm JS was really confusing-->
-<script>
-    const API_KEY = "026fbea870f63ad60c61fe0abc7dc23f"
-    const USER = "ninexiota"
-
-    fetch('https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=ninexiota&api_key=026fbea870f63ad60c61fe0abc7dc23f&format=json&limit=1')
-        .then(response => response.json())
-        .then(data=> {
-            const track = data.recenttracks.track[0];
-            const imageUrl = track.image[2]["#text"];
-            const trackName = track.name;
-            const artistName = track.artist["#text"];
-            const isNowPlaying = track["@attr"] && track["@attr"].nowplaying === "true";
-
-            document.getElementById("album-art").src = imageUrl;
-            document.getElementById("track-name").textContent = trackName;
-            document.getElementById("artist-name").textContent = isNowPlaying 
-                ? "▶ " + artistName 
-                : artistName;
-        })
-        .catch(err => console.log("last.fm fetch failed:", err));
-
-    fetch('https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=ninexiota&api_key=026fbea870f63ad60c61fe0abc7dc23f&format=json&period=7day&limit=5')
-        .then(response => response.json())
-        .then(data => {
-            const tracks = data.toptracks.track;
-            const container = document.getElementById("top-tracks");
-
-        tracks.forEach((track, index) => {
-            const entry = document.createElement("p");
-            entry.style.margin = "4px 0";
-            entry.textContent = `${index + 1}. ${track.name} - ${track.artist.name}`;
-            container.appendChild(entry);
-            });
-         })
-    .catch(err => console.log("top tracks fetch failed:", err));
-
-</script>
-
-<script>
-
-    const music = document.getElementById("bg-music");
-    document.getElementById("music-btn").addEventListener("click", () => {
-        if (music.paused) {
-            music.play();
-            document.getElementById("music-btn").textContent = "now playing ♪";
-        } else {
-            music.pause();
-            document.getElementById("music-btn").textContent = "press me for background music";
-        }
-});
-
-</script>
-
+ 
 </body>
-
-
-
-<!--adding this bc git won't push my COMMITS-->
 </html>
+
+<!--praying nothing is broken-->

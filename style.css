@@ -1,4 +1,4 @@
- /* main webpage title and um background AND text!*/
+/*fonts*/
  @font-face {
     font-family: "Ubuntu Sans";
     src: url(Ubuntu_Sans/static/UbuntuSans-Regular.ttf);
@@ -9,269 +9,195 @@
     src: url(Ubuntu_Sans/static/UbuntuSans-Bold.ttf);
     font-weight: bold;
  }
- h1{
-    color: whitesmoke;
-    font-family: "Ubuntu Sans", Arial, sans-serif;
-    font-size: 200%;
-}
-h1 img{
-    vertical-align: -16px;
-}
-h2{
-    color: whitesmoke;
-    font-family: "Ubuntu Sans", Arial, sans-serif;
-    font-size: 100%;
-    margin: -33px 0 0 61px;
-}
-.aboutme-header{
-    margin: 0 auto;
-    padding: 4px;
-}
-.subheader{
+ @font-face {
+    font-family: "Ubuntu Mono";
+    src: url(Ubuntu_Mono/UbuntuMono-Regular.ttf);
+    font-weight: normal;
+ }
+  @font-face {
+    font-family: "Ubuntu Mono";
+    src: url(Ubuntu_Mono/UbuntuMono-Bold.ttf);
+    font-weight: bold;
+ }
+ @font-face {
+    font-family: "Neuropol";
+    src: url(Neuropol/Neuropol.otf);
+    font-weight: bold;
+ }
+  @font-face {
+    font-family: "Neuropol";
+    src: url(Neuropol/Neuropol\ X\ Rg.otf);
+    font-weight: normal;
+ }
+
+ /*welcome screen*/
+ .welcome{
     position: relative;
-    display: block;
-    width: 140px;
-    margin: 0 auto;
-    font-family: "Ubuntu Sans", Arial, sans-serif;
+    font-family: "Neuropol", Arial, sans-serif;
     font-weight: bold;
-    font-size: 13px;
-    color: white;
-    padding: 8px 20px;
-}
-.blurb-body{
-    font-family: "Ubuntu Sans",Arial, sans-serif;
-    font-size: small;
-    background-color: rgba(173, 216, 235, 0.25);
-    border: 1px solid rgba(173, 216, 235, 0.9);
-    border-radius: 14px;
-    padding: 10px;
-    margin-bottom: 12px;
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transition: box-shadow 0.3s ease;
-}
-.blurb-body:hover{
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px rbga(0, 0, 0, 0.2);
-    box-shadow: 0 4px 20px rgba(173, 216, 235, 0.8),
-                inset 0 1px 1px rgba(255, 255, 255, 0.9);
+    font-size: 30px;
+    animation: fade-in 1.5s;
+    z-index: 50;
+ }
 
-}
-.mini-blog{
-    font-family: "Ubuntu Sans",Arial, sans-serif;
-    font-size: small;
-    background-color: rgba(173, 216, 235, 0.22);
-    border: 1px solid rgba(173, 216, 235, 0.9);
-    border-radius: 14px;
-    padding: 10px;
-    margin-bottom: 12px;
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
-    max-height: 200px;
-    overflow-y: auto;
-}
+ .wall{
+    background-color: beige;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+ }
 
-.mini-blog:hover{
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px rbga(0, 0, 0, 0.2);
-    box-shadow: 0 4px 20px rgba(173, 216, 235, 0.8),
-                inset 0 1px 1px rgba(255, 255, 255, 0.9);
-}
+ .wall.fade-out{
+    animation: fade-out 1.5s;
+    animation-fill-mode: forwards;
+ }
 
-.blog-header{
-    font-weight: bold;
-}
-.blog-date{
-    font-weight: normal;
-    font-style: italic;
-}
-.blog-entry{
-    font-weight: normal;
-    background-color: rgba(173, 216, 235, 0.6);
-    border: 2px solid rgba(173, 216, 235, 0.6);
-    border-radius: 14px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 5px 1px;
+ /*keyframes for welcome screen*/
+ @keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+    opacity: 1;
+    transform: scale(1);
+ }
 }
 
-.blog-entry:hover{
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px rbga(0, 0, 0, 0.2);
-    box-shadow: 0 4px 20px rgba(173, 216, 235, 0.8),
-                inset 0 1px 1px rgba(255, 255, 255, 0.9);
-}
+ @keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+ }
 
-.blog-title{
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-}
-.banner-img{
-    display: block;
-    width: 100%;
-    height: 150px;
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    border-radius: 14px;
-    object-fit: cover;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-.inline-icon{
-    width: 40px;
-    height: auto;
-    vertical-align: -12px;
-}
-p{
-    font-family: "Ubuntu Sans", Arial, sans-serif;
-    font-size: small;
-}
+ /*@keyframes scaledown {
+    0% {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1);    (doesn't work right now)
+    }
+    100% {
+        transform: scale(0);
+    }
+ }*/
+
+ /*body stuff*/
 body{
     background-image: url(images/background2.webp);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
-.aboutme-body{
-    background-image: url(images/background1.webp);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+
+/*H and P's*/
+p{
+    font-family: "Ubuntu Mono", Arial, sans-serif;
+    font-size: small;
 }
 
-/* wraps everything up inside flexbox */
+h1{
+    text-align: left;
+    color: white;
+    /*margin: 15px 0 0 0;*/ /*negative margins are bad :(*/
+    margin: 0;
+    padding: 15px 0 0 0;
+    line-height: 1;
+}
+h2{
+    text-align: center;
+    margin: 5px auto;
+    font-size: 15px;
+    color: white;
+}
+h3{
+    text-align: left;
+    color: white;
+    /*margin: -4px 0 15px;*/ /*negative margins are bad :(*/
+    margin: 0;
+    padding: 0 0 15px 0;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.marginTop{
+    height: 5px;
+}
+
+/*wrappers*/
 .wrapper{
     display: flex;
-    gap: 3px;
-    width: 60%;
-    margin: 0  auto;
-}
-
-/* all my containers and stuff... i feel like they're messy and broken :3*/
-.container{
-    width: 80%;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    outline: 1px solid rbga(0, 0, 0, 0.15);
-    border-radius: 16px;
-    backdrop-filter: blur(16px);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
-    animation: fadein 1.4s ease;
-    z-index: 1;
-}
-.container-header {
-    background-image: url(icons/subheader2.png);
-    background-position: center;
-    background-size: 130%;
-    border-radius: 14px 14px 0 0;
-    padding-top: 5px;
-    padding-bottom: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.container-body{
-    display: flex;
-    padding-bottom: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.container-body .sidebar-left{
-    border-radius: 0 0 0 14px;
-}
-.main-body{
-    flex: 3;
-}
-/* sidebar styles */
-.sidebar { 
-    flex: 1;
-    margin-top: 102px;
-    background-color: rgba(255, 255, 255, 0.55);
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    outline: 1px solid rbga(0, 0, 0, 0.15);
-    border-radius: 16px;
-    backdrop-filter: blur(16px);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
-    animation: fadein 1s ease;
-    min-height: 200px;
-}
-.sidebar-left{
-    display: flex;
+    box-sizing: content-box;
+    position: absolute;
+    max-height: 700px;
+    max-width: 850px;
     flex-direction: column;
-    animation: slide-left 2s ease 0.4s both;
-    align-self: stretch;
+    margin: auto;
+    top: 0; bottom: 0; right: 0; left: 0;
+    gap: 5px;
+    font-family: "Ubuntu Sans", Arial, sans-serif;
 }
 
-.sidebar-right{
-    animation: slide-right 2s ease 0.4s both;
-    z-index: 0;
-}
-.sidebar-header{
-    display: block;
-    margin: -10px 0;
-}
-/* this is ALL unorganized right now... it is small fixes and style adjustments to img and text inside sidebars */
-@keyframes float{
-    0% {transform: translateY(0px); scale: (1);}
-    50% {transform: translateY(-6px); scale: (1.08);}
-    100% {transform: translateY(0px); scale: (1);}
+.subwrap{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    gap: 3px;
+    font-family: "Ubuntu Sans", Arial, sans-serif;
+    z-index: 30;
 }
 
-@keyframes float-pulse{
-    0%   { transform: translateY(0px) scale(1); }
-    50%  { transform: translateY(-6px) scale(1.03); }
-    100% { transform: translateY(0px) scale(1); }
+.subwrap.fadein{
+    animation: fadein .75s ease-in-out;
 }
 
-@keyframes pulse{
-    0% { transform: scale(1); }
-    50% { transform: scale(1.07); }
-    100% {transform: scale(1); }
+.sidewrap{
+    display: flex;
+    box-sizing: content-box;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    gap: 5px;
+    z-index: 20;
 }
 
-@keyframes glow{
-     0% { text-shadow: 0 0 4px rgba(173, 216, 235, 0.4); }
-    50% { text-shadow: 0 0 10px rgba(173, 216, 235, 0.9); }
-    100% { text-shadow: 0 0 4px rgba(173, 216, 235, 0.4); }
+.sidewrap.left{
+    width: 30%;
+    position: relative;
 }
 
-.album-art{
-    display: block;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    border-radius: 14px;
-    animation: float-pulse 3s ease-in-out infinite;
-}
-.sidebar-right .inline-icon{
-    width: 30px;
-    height: auto;
-}
-.sidebar-right p {
-    margin: 4px 0 0 0;
-    padding-top: 30px;
-
-}
-.sidebar-right p img {
-    vertical-align: middle;
-}
-.music-info{
-    background-color: rgba(173, 216, 235, 0.4);
-    border: 2px solid rgba(173, 216, 235, 0.6);
-    border-radius: 14px;
-    padding: 10px;
-    margin: 10px;
-}
-.links{
-    margin: 10px;
-    transition: color 0.3s ease;
-    text-decoration: none;
-}
-.links:hover{
-    color: whitesmoke;
+.sidewrap.right{
+    width: 30%;
 }
 
-.bkgnd-audio{
-    animation: pulse 3s ease-in-out infinite;
+.sidewrap.left.slide-left{
+    animation: slide-left 1s;
 }
 
+.sidewrap.right.slide-right{
+    animation: slide-right 1s;
+}
+
+/*keyframes for sidebar + center container animations*/
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -286,3 +212,187 @@ body{
     from { transform: translateX(-80px); opacity: 0; }
     to   { transform: translateX(0); opacity: 1; }
 }
+
+@keyframes slide-down {
+    from { transform: translateY(-80px); opacity: 0;}
+    to { transform: translateY(0); opacity: 1;}
+}
+
+/*containers*/
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    /*border-box fixes the container overlapping the right container*/
+    box-sizing: border-box;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    outline: 1px solid rbga(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 8px;
+    backdrop-filter: blur(0px);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
+}
+
+.container.titlecard{
+    display: flex;
+    flex-direction: row;
+    background-image: url(bgrnds/blue-swirl.webp);
+}
+
+.container.titlecard.slide-down{
+    animation: slide-down 1s;
+}
+
+.container.side{
+    flex-grow: 1;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.title.row{
+    /*row aligned title*/
+    display: flex;
+    flex-direction: row;
+}
+
+/*blurbs (text boxes pretty much)*/
+.blurb{
+    font-size: small;
+    background-color: rgba(191, 220, 236, 0.7);
+    border: 1px solid rgba(165, 207, 225, 0.9);
+    border-radius: 10px;
+    padding: 3px;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), 0 4px 16px, rbga(0, 0, 0, 0.2);
+}
+
+.blurb.row{
+    /*row aligned blurb*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.blurb.changelog{
+    /*changelog blurb*/
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/*.blurb.entry{
+    margin: 5px 0 0 0;
+    padding: 0px;
+    background-color: rgba(173, 216, 235, 0.6);
+    border: 2px solid rgba(173, 216, 235, 0.6);
+}*/
+
+.blurb.entry{
+    margin: 5px 0 0 0;
+    padding: 3px;
+    background-color: rgba(250, 250, 250, .8);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 12px 6px rgba(255, 255, 255, 0.6);
+    border: 1px solid darkgrey;
+}
+
+/*heads*/
+
+/*images*/
+.banner{
+    display: block;
+    object-position: center 30%;
+    width: 100%;
+    height: 150px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 14px;
+    object-fit: cover;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+/*unorganized*/
+.links{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 10px 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.album-art{
+    display: block;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 14px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/*keyframes for album art*/
+@keyframes pulse{
+   0% {transform: scale(1);}
+   50% {transform: scale(1.03);}
+   100% {transform: scale(1);}
+}
+
+.vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at center, transparent 70%, rgba(0,0,0,0.3) 100%);
+    pointer-events: none;
+    z-index: 40;
+}
+
+.sidebar-character-1 {
+    position: absolute;
+    bottom: -7px;
+    right: -95px;
+    transform: translateX(-30%);
+    rotate: -6deg;
+    width: 230px !important;
+    pointer-events: none;
+    z-index: 5;
+    background: none !important;
+    border: none !important;
+}
+
+.sidebar-character-2 {
+    position: absolute;
+    bottom: 350px;
+    right: -95px;
+    transform: translateX(-35%);
+    rotate: 12deg;
+    width: 100px !important;
+    z-index: 5;
+    background: none !important;
+    border: none !important;
+}
+
+.sidebar-character-2.transFadeIn{
+    animation: transFadeIn 1.25s;
+}
+
+@keyframes transFadeIn {
+    0% {transform: translateX(-35%); opacity: 0;}
+    100% {transform: translateX(-35%); opacity: 1;}
+}
+
