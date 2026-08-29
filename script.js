@@ -47,21 +47,24 @@
     const API_KEY = "026fbea870f63ad60c61fe0abc7dc23f" //yes i know this is an exposed API Key..... figuring it out
     const USER = "ninexiota"
 
-    fetch('https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=ninexiota&api_key=026fbea870f63ad60c61fe0abc7dc23f&format=json&limit=1')
+    fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${USER}&api_key=${API_KEY}&format=json&limit=1`)
         .then(response => response.json())
-        .then(data=> {
+        .then(data => {
             const track = data.recenttracks.track[0];
-            const imageUrl = track.image[2]["#text"];
-            const trackName = track.name;
-            const artistName = track.artist["#text"];
-            const isNowPlaying = track["@attr"] && track["@attr"].nowplaying === "true";
 
-            document.getElementById("album-art").src = imageUrl;
-            document.getElementById("track-name").textContent = trackName;
-            document.getElementById("artist-name").textContent = isNowPlaying 
-                ? trackName: artistName;
+            const imageUrl   = track.image[2]["#text"];
+            const trackName  = track.name;
+            const artistName = track.artist["#text"];
+
+            document.getElementById("album-art").src         = imageUrl;
+            document.getElementById("track-name").textContent  = trackName;
+            document.getElementById("artist-name").textContent = artistName;
         })
-        .catch(err => console.log("last.fm fetch failed:", err));
+        .catch(err => {
+            console.log("last.fm fetch failed:", err);
+            document.getElementById("track-name").textContent  = "unavailable";
+            document.getElementById("artist-name").textContent = "";
+        });
 
     fetch('https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=ninexiota&api_key=026fbea870f63ad60c61fe0abc7dc23f&format=json&period=7day&limit=5')
         .then(response => response.json())
