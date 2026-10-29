@@ -109,6 +109,13 @@ body{
     background-position: center;
 }
 
+diffBody{
+    background-image: url(bgrnds/metro.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
 /*H and P's*/
 p{
     font-family: "Ubuntu Mono", Arial, sans-serif;
