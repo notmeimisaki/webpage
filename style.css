@@ -109,13 +109,6 @@ body{
     background-position: center;
 }
 
-diffBody{
-    background-image: url(bgrnds/metro.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
-
 /*H and P's*/
 p{
     font-family: "Ubuntu Mono", Arial, sans-serif;
@@ -388,6 +381,18 @@ h3{
     right: -95px;
     transform: translateX(-35%);
     rotate: 12deg;
+    width: 100px !important;
+    z-index: 5;
+    background: none !important;
+    border: none !important;
+}
+
+.sidebar-character-3 {
+    position: absolute;
+    bottom:500px;
+    right: 200px;
+    transform: translateX(-35%);
+    rotate: -12deg;
     width: 100px !important;
     z-index: 5;
     background: none !important;

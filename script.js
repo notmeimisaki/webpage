@@ -91,3 +91,17 @@
                 music.pause();
             }
          })
+
+
+// hidden.html
+    const hiddenPrompt = document.getElementById("hiddenElement");
+
+    document.getElementById("JJ").addEventListener("click", function() {
+        const answer = prompt("the month that we met... hint: no capitalization!");
+
+        if (answer == "december") {
+            window.location.href = "hidden.html";
+        } else {
+            null;
+        }
+    })
