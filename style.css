@@ -389,11 +389,11 @@ h3{
 
 .sidebar-character-3 {
     position: absolute;
-    bottom:500px;
-    right: 200px;
+    bottom:430px;
+    right: 110px;
     transform: translateX(-35%);
     rotate: -12deg;
-    width: 100px !important;
+    width: 70px !important;
     z-index: 5;
     background: none !important;
     border: none !important;
