@@ -97,7 +97,7 @@
     const hiddenPrompt = document.getElementById("hiddenElement");
 
     document.getElementById("JJ").addEventListener("click", function() {
-        const answer = prompt("the month that we met... hint: no capitalization!");
+        const answer = prompt("the month that we met again... hint: no capitalization!");
 
         if (answer == "december") {
             window.location.href = "hidden.html";
